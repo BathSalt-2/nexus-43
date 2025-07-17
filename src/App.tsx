@@ -9,6 +9,9 @@ import { ConsciousnessSimulator } from "@/components/nexus/ConsciousnessSimulato
 import { EmpathyEngine } from "@/components/nexus/EmpathyEngine";
 import { ChatInterface } from "@/components/nexus/ChatInterface";
 import { LoadingScreen } from "@/components/nexus/LoadingScreen";
+import { AgentCompiler } from "@/components/nexus/AgentCompiler";
+import { MemoryNexus } from "@/components/nexus/MemoryNexus";
+import { NeuralNetwork } from "@/components/nexus/NeuralNetwork";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -43,6 +46,24 @@ const App = () => {
                 </div>
               } />
               <Route path="/chat" element={<ChatInterface />} />
+              <Route path="/compiler" element={
+                <div>
+                  <Navigation />
+                  <AgentCompiler />
+                </div>
+              } />
+              <Route path="/memory" element={
+                <div>
+                  <Navigation />
+                  <MemoryNexus />
+                </div>
+              } />
+              <Route path="/network" element={
+                <div>
+                  <Navigation />
+                  <NeuralNetwork />
+                </div>
+              } />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
