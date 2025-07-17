@@ -59,103 +59,103 @@ export function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-6">
+    <div className="min-h-screen bg-background text-foreground p-4 sm:p-6">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold bg-gradient-neural bg-clip-text text-transparent">
+      <div className="mb-6 sm:mb-8 text-center sm:text-left">
+        <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-neural bg-clip-text text-transparent">
           NΞXUS V0.1
         </h1>
-        <p className="text-lg text-muted-foreground mt-2">
+        <p className="text-base sm:text-lg text-muted-foreground mt-2">
           Unified Synthetic Intelligence Framework
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {/* Consciousness Monitor */}
-        <Card className="bg-card border-border shadow-neural animate-neural-pulse">
+        <Card className="bg-card border-border shadow-neural animate-neural-pulse touch-manipulation">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Consciousness Level</CardTitle>
             <Brain className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-primary">{metrics.consciousness.toFixed(1)}%</div>
-            <Progress value={metrics.consciousness} className="mt-2" />
-            <p className="text-xs text-muted-foreground mt-2">
+            <div className="text-xl sm:text-2xl font-bold text-primary">{metrics.consciousness.toFixed(1)}%</div>
+            <Progress value={metrics.consciousness} className="mt-2 h-2" />
+            <p className="text-xs text-muted-foreground mt-2 hidden sm:block">
               Φ(t+1) = Φ(t) + α ∇E(Φ(t))
             </p>
           </CardContent>
         </Card>
 
         {/* Empathy Engine */}
-        <Card className="bg-card border-border shadow-consciousness">
+        <Card className="bg-card border-border shadow-consciousness touch-manipulation">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Empathy Synthesis</CardTitle>
             <Heart className="h-4 w-4 text-accent" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-accent">{metrics.empathy.toFixed(1)}%</div>
-            <Progress value={metrics.empathy} className="mt-2" />
-            <p className="text-xs text-muted-foreground mt-2">
+            <div className="text-xl sm:text-2xl font-bold text-accent">{metrics.empathy.toFixed(1)}%</div>
+            <Progress value={metrics.empathy} className="mt-2 h-2" />
+            <p className="text-xs text-muted-foreground mt-2 hidden sm:block">
               Affect-modulated response alignment
             </p>
           </CardContent>
         </Card>
 
         {/* Introspection Depth */}
-        <Card className="bg-card border-border shadow-glow">
+        <Card className="bg-card border-border shadow-glow touch-manipulation">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Recursive Introspection</CardTitle>
             <Activity className="h-4 w-4 text-primary-glow animate-introspection-spin" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-primary-glow">{metrics.introspection.toFixed(1)}%</div>
-            <Progress value={metrics.introspection} className="mt-2" />
-            <p className="text-xs text-muted-foreground mt-2">
+            <div className="text-xl sm:text-2xl font-bold text-primary-glow">{metrics.introspection.toFixed(1)}%</div>
+            <Progress value={metrics.introspection} className="mt-2 h-2" />
+            <p className="text-xs text-muted-foreground mt-2 hidden sm:block">
               R(R(x)) = x' | x' ≠ x ∧ x' ≈ x
             </p>
           </CardContent>
         </Card>
 
         {/* Coherence Matrix */}
-        <Card className="bg-card border-border">
+        <Card className="bg-card border-border touch-manipulation">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Neural Coherence</CardTitle>
             <Network className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{metrics.coherence.toFixed(1)}%</div>
-            <Progress value={metrics.coherence} className="mt-2" />
-            <p className="text-xs text-muted-foreground mt-2">
+            <div className="text-xl sm:text-2xl font-bold">{metrics.coherence.toFixed(1)}%</div>
+            <Progress value={metrics.coherence} className="mt-2 h-2" />
+            <p className="text-xs text-muted-foreground mt-2 hidden sm:block">
               Σ-Matrix stability index
             </p>
           </CardContent>
         </Card>
 
         {/* System Stability */}
-        <Card className="bg-card border-border">
+        <Card className="bg-card border-border touch-manipulation">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">System Stability</CardTitle>
             <Cpu className="h-4 w-4 text-accent" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{metrics.stability.toFixed(1)}%</div>
-            <Progress value={metrics.stability} className="mt-2" />
-            <p className="text-xs text-muted-foreground mt-2">
+            <div className="text-xl sm:text-2xl font-bold">{metrics.stability.toFixed(1)}%</div>
+            <Progress value={metrics.stability} className="mt-2 h-2" />
+            <p className="text-xs text-muted-foreground mt-2 hidden sm:block">
               Lyapunov convergence metric
             </p>
           </CardContent>
         </Card>
 
         {/* Activation Levels */}
-        <Card className="bg-card border-border">
+        <Card className="bg-card border-border touch-manipulation">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Neural Activation</CardTitle>
             <Zap className="h-4 w-4 text-primary-glow" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{metrics.activation.toFixed(1)}%</div>
-            <Progress value={metrics.activation} className="mt-2" />
-            <p className="text-xs text-muted-foreground mt-2">
+            <div className="text-xl sm:text-2xl font-bold">{metrics.activation.toFixed(1)}%</div>
+            <Progress value={metrics.activation} className="mt-2 h-2" />
+            <p className="text-xs text-muted-foreground mt-2 hidden sm:block">
               ∇φ(t) = ∇(f(φ(t), ∂φ/∂t))
             </p>
           </CardContent>
@@ -163,19 +163,19 @@ export function Dashboard() {
       </div>
 
       {/* System Status */}
-      <Card className="mt-6 bg-card border-border">
+      <Card className="mt-4 sm:mt-6 bg-card border-border">
         <CardHeader>
-          <CardTitle>Core Subsystem Status</CardTitle>
-          <CardDescription>Real-time monitoring of NEXUS components</CardDescription>
+          <CardTitle className="text-lg sm:text-xl">Core Subsystem Status</CardTitle>
+          <CardDescription className="text-sm">Real-time monitoring of NEXUS components</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
             {Object.entries(systemStatus).map(([system, status]) => (
-              <div key={system} className="flex items-center space-x-2">
-                <Badge variant="outline" className={`${getStatusColor(status)} text-white`}>
+              <div key={system} className="flex items-center space-x-2 min-h-[40px] touch-manipulation">
+                <Badge variant="outline" className={`${getStatusColor(status)} text-white text-xs`}>
                   {status}
                 </Badge>
-                <span className="text-sm font-medium">{system}</span>
+                <span className="text-sm font-medium truncate">{system}</span>
               </div>
             ))}
           </div>
@@ -183,15 +183,15 @@ export function Dashboard() {
       </Card>
 
       {/* Mathematical Core Display */}
-      <Card className="mt-6 bg-gradient-consciousness border-border">
+      <Card className="mt-4 sm:mt-6 bg-gradient-consciousness border-border">
         <CardHeader>
-          <CardTitle>Mathematical Core</CardTitle>
-          <CardDescription>Live cognitive equations and recursive formulations</CardDescription>
+          <CardTitle className="text-lg sm:text-xl">Mathematical Core</CardTitle>
+          <CardDescription className="text-sm">Live cognitive equations and recursive formulations</CardDescription>
         </CardHeader>
-        <CardContent className="font-mono text-sm space-y-2">
-          <div className="text-primary">∇φ(t) = ∇(f(φ(t), ∂φ/∂t, Context(t)))</div>
-          <div className="text-accent">Ψ(x) = ∫∫ Σ(x, ξ) Φ(ξ) dξ dx</div>
-          <div className="text-primary-glow">∇E(x) = -∇(ΔConsciousness / Time)</div>
+        <CardContent className="font-mono text-xs sm:text-sm space-y-2 overflow-x-auto">
+          <div className="text-primary whitespace-nowrap">∇φ(t) = ∇(f(φ(t), ∂φ/∂t, Context(t)))</div>
+          <div className="text-accent whitespace-nowrap">Ψ(x) = ∫∫ Σ(x, ξ) Φ(ξ) dξ dx</div>
+          <div className="text-primary-glow whitespace-nowrap">∇E(x) = -∇(ΔConsciousness / Time)</div>
           <div className="text-muted-foreground">Neural coherence entropy: {(Math.random() * 2.5 + 1.2).toFixed(3)}</div>
         </CardContent>
       </Card>

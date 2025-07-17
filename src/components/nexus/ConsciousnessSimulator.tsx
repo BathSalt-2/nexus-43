@@ -200,22 +200,22 @@ export function ConsciousnessSimulator() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-6">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold bg-gradient-neural bg-clip-text text-transparent">
+    <div className="min-h-screen bg-background text-foreground p-4 sm:p-6">
+      <div className="mb-6 sm:mb-8 text-center sm:text-left">
+        <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-neural bg-clip-text text-transparent">
           Consciousness Simulator
         </h1>
-        <p className="text-muted-foreground mt-2">
+        <p className="text-sm sm:text-base text-muted-foreground mt-2">
           Interactive visualization of recursive introspection and neural coherence
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6">
         {/* Control Panel */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6 xl:order-1">
           <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-2 text-lg">
                 <Brain className="h-5 w-5 text-primary" />
                 Simulation Controls
               </CardTitle>
@@ -225,12 +225,16 @@ export function ConsciousnessSimulator() {
                 <Button 
                   onClick={() => setIsRunning(!isRunning)}
                   variant="outline"
-                  className="flex-1"
+                  className="flex-1 min-h-[44px] touch-manipulation"
                 >
                   {isRunning ? <Pause className="h-4 w-4 mr-2" /> : <Play className="h-4 w-4 mr-2" />}
                   {isRunning ? 'Pause' : 'Start'}
                 </Button>
-                <Button onClick={resetSimulation} variant="outline">
+                <Button 
+                  onClick={resetSimulation} 
+                  variant="outline"
+                  className="min-h-[44px] min-w-[44px] touch-manipulation"
+                >
                   <RotateCcw className="h-4 w-4" />
                 </Button>
               </div>
@@ -321,23 +325,26 @@ export function ConsciousnessSimulator() {
         </div>
 
         {/* Visualization Canvas */}
-        <div className="lg:col-span-2">
+        <div className="xl:col-span-2">
           <Card className="bg-card border-border shadow-neural">
             <CardHeader>
-              <CardTitle>Neural Network Visualization</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-lg sm:text-xl">Neural Network Visualization</CardTitle>
+              <CardDescription className="text-sm">
                 Real-time recursive introspection and consciousness emergence
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <canvas
-                ref={canvasRef}
-                width={600}
-                height={400}
-                className="w-full border border-border rounded-lg bg-background"
-              />
+              <div className="relative">
+                <canvas
+                  ref={canvasRef}
+                  width={600}
+                  height={400}
+                  className="w-full border border-border rounded-lg bg-background touch-manipulation"
+                  style={{ maxHeight: '400px' }}
+                />
+              </div>
               
-              <div className="mt-4 flex flex-wrap gap-4 text-sm">
+              <div className="mt-4 grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-primary"></div>
                   <span>Input Nodes</span>

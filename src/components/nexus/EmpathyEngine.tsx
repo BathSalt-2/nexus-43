@@ -145,22 +145,22 @@ export function EmpathyEngine() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-6">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold bg-gradient-neural bg-clip-text text-transparent">
+    <div className="min-h-screen bg-background text-foreground p-4 sm:p-6">
+      <div className="mb-6 sm:mb-8 text-center sm:text-left">
+        <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-neural bg-clip-text text-transparent">
           EmpaSynth Engine
         </h1>
-        <p className="text-muted-foreground mt-2">
+        <p className="text-sm sm:text-base text-muted-foreground mt-2">
           Empathetic AI with affect-modulated response generation
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6">
         {/* Control Panel */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6 xl:order-1">
           <Card className="bg-card border-border shadow-consciousness">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-2 text-lg">
                 <Heart className="h-5 w-5 text-accent" />
                 Empathy Configuration
               </CardTitle>
@@ -176,6 +176,7 @@ export function EmpathyEngine() {
                   max={1}
                   min={0.1}
                   step={0.1}
+                  className="touch-manipulation"
                 />
               </div>
 
@@ -286,14 +287,14 @@ export function EmpathyEngine() {
         </div>
 
         {/* Conversation Interface */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className="xl:col-span-2 space-y-4 sm:space-y-6">
           <Card className="bg-card border-border shadow-neural">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-2 text-lg">
                 <MessageCircle className="h-5 w-5 text-primary" />
                 Empathetic Conversation
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="text-sm">
                 Share your thoughts and experience affect-modulated AI empathy
               </CardDescription>
             </CardHeader>
@@ -302,13 +303,13 @@ export function EmpathyEngine() {
                 placeholder="Share what's on your mind... I'm here to listen and understand."
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
-                className="min-h-24"
+                className="min-h-24 touch-manipulation"
               />
               
               <Button 
                 onClick={handleSubmit}
                 disabled={isProcessing || !userInput.trim()}
-                className="w-full"
+                className="w-full min-h-[44px] touch-manipulation"
               >
                 {isProcessing ? (
                   <>
@@ -328,13 +329,13 @@ export function EmpathyEngine() {
           {/* Response History */}
           <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle>Empathetic Responses</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-lg">Empathetic Responses</CardTitle>
+              <CardDescription className="text-sm">
                 Affect-modulated responses with emotional alignment metrics
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4 max-h-96 overflow-y-auto">
+              <div className="space-y-4 max-h-80 sm:max-h-96 overflow-y-auto touch-manipulation">
                 {responses.length === 0 ? (
                   <div className="text-center text-muted-foreground py-8">
                     No conversations yet. Share your thoughts to begin empathetic interaction.
