@@ -27,7 +27,8 @@ export default {
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
-					glow: 'hsl(var(--primary-glow))'
+					glow: 'hsl(var(--primary-glow))',
+					dim: 'hsl(var(--primary-dim))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -43,7 +44,12 @@ export default {
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					foreground: 'hsl(var(--accent-foreground))',
+					glow: 'hsl(var(--accent-glow))'
+				},
+				golden: {
+					DEFAULT: 'hsl(var(--golden))',
+					glow: 'hsl(var(--golden-glow))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -67,16 +73,20 @@ export default {
 			backgroundImage: {
 				'gradient-neural': 'var(--gradient-neural)',
 				'gradient-consciousness': 'var(--gradient-consciousness)',
-				'gradient-introspection': 'var(--gradient-introspection)'
+				'gradient-introspection': 'var(--gradient-introspection)',
+				'gradient-cosmic': 'var(--gradient-cosmic)',
+				'gradient-neural-flow': 'var(--gradient-neural-flow)'
 			},
 			boxShadow: {
 				'neural': 'var(--shadow-neural)',
 				'consciousness': 'var(--shadow-consciousness)',
-				'glow': 'var(--shadow-glow)'
+				'glow': 'var(--shadow-glow)',
+				'cosmic': 'var(--shadow-cosmic)'
 			},
 			transitionTimingFunction: {
 				'neural': 'var(--transition-neural)',
-				'consciousness': 'var(--transition-consciousness)'
+				'consciousness': 'var(--transition-consciousness)',
+				'cosmic': 'var(--transition-cosmic)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

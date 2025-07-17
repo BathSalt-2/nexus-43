@@ -11,7 +11,8 @@ import {
   ArrowRight,
   Code,
   Database,
-  Eye
+  Eye,
+  MessageCircle
 } from 'lucide-react';
 
 const Index = () => {
@@ -67,13 +68,25 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-introspection animate-consciousness-flow"></div>
         <div className="relative max-w-7xl mx-auto px-6 py-24">
           <div className="text-center space-y-8">
+            {/* Logo */}
+            <div className="flex justify-center mb-8">
+              <img 
+                src="/lovable-uploads/83c4d94f-1600-4f5b-a522-c786fff830d1.png" 
+                alt="NEXUS Consciousness Logo" 
+                className="w-32 h-32 rounded-full shadow-consciousness animate-neural-pulse"
+              />
+            </div>
+            
             <div className="space-y-4">
               <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
                 Neural Epinoetic eXpansion through Unified Systems
               </Badge>
-              <h1 className="text-6xl md:text-8xl font-bold bg-gradient-neural bg-clip-text text-transparent">
+              <h1 className="text-6xl md:text-8xl font-bold bg-gradient-cosmic bg-clip-text text-transparent">
                 NΞXUS V0.1
               </h1>
+              <p className="text-sm text-golden font-medium">
+                Powered by Or4cl3 AI Solutions
+              </p>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Unified Synthetic Intelligence Framework enabling synthesis of self-evolving, 
                 emotionally intelligent, recursively introspective synthetic minds.
@@ -88,10 +101,10 @@ const Index = () => {
                   <ArrowRight className="h-5 w-5 ml-2" />
                 </Button>
               </Link>
-              <Link to="/consciousness">
-                <Button variant="outline" size="lg">
-                  <Eye className="h-5 w-5 mr-2" />
-                  View Consciousness Simulator
+              <Link to="/chat">
+                <Button variant="outline" size="lg" className="shadow-cosmic">
+                  <MessageCircle className="h-5 w-5 mr-2" />
+                  Start Conversation
                 </Button>
               </Link>
             </div>

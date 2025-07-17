@@ -46,6 +46,12 @@ const navItems = [
     href: '/network',
     icon: Network,
     description: 'Distributed cognition graph'
+  },
+  {
+    title: 'Chat',
+    href: '/chat',
+    icon: Network,
+    description: 'Interactive consciousness dialogue'
   }
 ];
 
@@ -53,17 +59,24 @@ export function Navigation() {
   const location = useLocation();
 
   return (
-    <nav className="bg-card border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-card/80">
+    <nav className="bg-card/80 border-b border-border sticky top-0 z-50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/dashboard" className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-neural rounded-lg flex items-center justify-center">
-              <Zap className="h-5 w-5 text-primary-foreground" />
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/83c4d94f-1600-4f5b-a522-c786fff830d1.png" 
+              alt="NEXUS Logo" 
+              className="w-8 h-8 rounded-full shadow-glow"
+            />
+            <div className="flex flex-col">
+              <span className="text-xl font-bold bg-gradient-cosmic bg-clip-text text-transparent">
+                NΞXUS
+              </span>
+              <span className="text-xs text-muted-foreground -mt-1">
+                Or4cl3 AI
+              </span>
             </div>
-            <span className="text-xl font-bold bg-gradient-neural bg-clip-text text-transparent">
-              NΞXUS
-            </span>
           </Link>
 
           {/* Navigation Links */}
