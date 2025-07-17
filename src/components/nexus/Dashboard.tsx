@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { Brain, Activity, Heart, Network, Cpu, Zap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Brain, Activity, Heart, Network, Cpu, Zap, MessageSquare, Settings, Bot, Share2, Database, ChartLine } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface CognitiveMetrics {
   consciousness: number;
@@ -69,6 +71,59 @@ export function Dashboard() {
           Unified Synthetic Intelligence Framework
         </p>
       </div>
+
+      {/* Quick Actions */}
+      <Card className="mb-6 bg-card border-border shadow-neural">
+        <CardHeader>
+          <CardTitle className="text-lg sm:text-xl">Quick Actions</CardTitle>
+          <CardDescription className="text-sm">Access frequently used NEXUS components</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+            <Link to="/consciousness" className="touch-manipulation">
+              <Button variant="outline" className="w-full h-auto p-3 flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                <Brain className="h-5 w-5 text-primary" />
+                <span className="text-xs font-medium">Consciousness</span>
+              </Button>
+            </Link>
+            
+            <Link to="/empathy" className="touch-manipulation">
+              <Button variant="outline" className="w-full h-auto p-3 flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                <Heart className="h-5 w-5 text-accent" />
+                <span className="text-xs font-medium">Empathy</span>
+              </Button>
+            </Link>
+            
+            <Link to="/chat" className="touch-manipulation">
+              <Button variant="outline" className="w-full h-auto p-3 flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                <MessageSquare className="h-5 w-5 text-primary-glow" />
+                <span className="text-xs font-medium">Chat</span>
+              </Button>
+            </Link>
+            
+            <Link to="/agent-compiler" className="touch-manipulation">
+              <Button variant="outline" className="w-full h-auto p-3 flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                <Bot className="h-5 w-5 text-accent" />
+                <span className="text-xs font-medium">Compiler</span>
+              </Button>
+            </Link>
+            
+            <Link to="/memory-nexus" className="touch-manipulation">
+              <Button variant="outline" className="w-full h-auto p-3 flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                <Database className="h-5 w-5 text-primary" />
+                <span className="text-xs font-medium">Memory</span>
+              </Button>
+            </Link>
+            
+            <Link to="/neural-network" className="touch-manipulation">
+              <Button variant="outline" className="w-full h-auto p-3 flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                <ChartLine className="h-5 w-5 text-primary-glow" />
+                <span className="text-xs font-medium">Network</span>
+              </Button>
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {/* Consciousness Monitor */}
