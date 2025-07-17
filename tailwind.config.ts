@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -63,6 +64,20 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			backgroundImage: {
+				'gradient-neural': 'var(--gradient-neural)',
+				'gradient-consciousness': 'var(--gradient-consciousness)',
+				'gradient-introspection': 'var(--gradient-introspection)'
+			},
+			boxShadow: {
+				'neural': 'var(--shadow-neural)',
+				'consciousness': 'var(--shadow-consciousness)',
+				'glow': 'var(--shadow-glow)'
+			},
+			transitionTimingFunction: {
+				'neural': 'var(--transition-neural)',
+				'consciousness': 'var(--transition-consciousness)'
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -84,11 +99,65 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'neural-pulse': {
+					'0%, 100%': { 
+						boxShadow: '0 0 20px hsl(var(--primary) / 0.5)',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						boxShadow: '0 0 40px hsl(var(--primary) / 0.8)',
+						transform: 'scale(1.02)'
+					}
+				},
+				'consciousness-flow': {
+					'0%': { 
+						backgroundPosition: '0% 50%'
+					},
+					'50%': { 
+						backgroundPosition: '100% 50%'
+					},
+					'100%': { 
+						backgroundPosition: '0% 50%'
+					}
+				},
+				'introspection-spin': {
+					'0%': { 
+						transform: 'rotate(0deg)',
+						opacity: '0.3'
+					},
+					'50%': { 
+						opacity: '0.8'
+					},
+					'100%': { 
+						transform: 'rotate(360deg)',
+						opacity: '0.3'
+					}
+				},
+				'data-stream': {
+					'0%': { 
+						transform: 'translateY(-10px)',
+						opacity: '0'
+					},
+					'10%': { 
+						opacity: '1'
+					},
+					'90%': { 
+						opacity: '1'
+					},
+					'100%': { 
+						transform: 'translateY(100vh)',
+						opacity: '0'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'neural-pulse': 'neural-pulse 3s ease-in-out infinite',
+				'consciousness-flow': 'consciousness-flow 8s ease-in-out infinite',
+				'introspection-spin': 'introspection-spin 12s linear infinite',
+				'data-stream': 'data-stream 4s linear infinite'
 			}
 		}
 	},
