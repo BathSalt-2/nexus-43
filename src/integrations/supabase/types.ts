@@ -14,7 +14,398 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      agent_templates: {
+        Row: {
+          category: string
+          complexity: string
+          created_at: string
+          created_by: string | null
+          description: string
+          id: string
+          is_public: boolean
+          name: string
+          prompt_template: string | null
+        }
+        Insert: {
+          category: string
+          complexity: string
+          created_at?: string
+          created_by?: string | null
+          description: string
+          id?: string
+          is_public?: boolean
+          name: string
+          prompt_template?: string | null
+        }
+        Update: {
+          category?: string
+          complexity?: string
+          created_at?: string
+          created_by?: string | null
+          description?: string
+          id?: string
+          is_public?: boolean
+          name?: string
+          prompt_template?: string | null
+        }
+        Relationships: []
+      }
+      chat_messages: {
+        Row: {
+          cognitive_load: number | null
+          content: string
+          created_at: string
+          emotion: string | null
+          id: string
+          message_type: string
+          subsystem: string | null
+          user_id: string
+        }
+        Insert: {
+          cognitive_load?: number | null
+          content: string
+          created_at?: string
+          emotion?: string | null
+          id?: string
+          message_type: string
+          subsystem?: string | null
+          user_id: string
+        }
+        Update: {
+          cognitive_load?: number | null
+          content?: string
+          created_at?: string
+          emotion?: string | null
+          id?: string
+          message_type?: string
+          subsystem?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      compiled_agents: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          last_run: string | null
+          name: string
+          performance: number
+          prompt_used: string | null
+          status: string
+          template_id: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          last_run?: string | null
+          name: string
+          performance?: number
+          prompt_used?: string | null
+          status?: string
+          template_id?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          last_run?: string | null
+          name?: string
+          performance?: number
+          prompt_used?: string | null
+          status?: string
+          template_id?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "compiled_agents_template_id_fkey"
+            columns: ["template_id"]
+            isOneToOne: false
+            referencedRelation: "agent_templates"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      consciousness_metrics: {
+        Row: {
+          activation: number
+          coherence: number
+          consciousness: number
+          empathy: number
+          id: string
+          introspection: number
+          recorded_at: string
+          stability: number
+          user_id: string
+        }
+        Insert: {
+          activation?: number
+          coherence?: number
+          consciousness?: number
+          empathy?: number
+          id?: string
+          introspection?: number
+          recorded_at?: string
+          stability?: number
+          user_id: string
+        }
+        Update: {
+          activation?: number
+          coherence?: number
+          consciousness?: number
+          empathy?: number
+          id?: string
+          introspection?: number
+          recorded_at?: string
+          stability?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      empathy_responses: {
+        Row: {
+          arousal: number
+          confidence: number
+          created_at: string
+          dominance: number
+          emotion: string
+          empathy_level: number
+          id: string
+          response_text: string
+          user_id: string
+          user_input: string
+          valence: number
+        }
+        Insert: {
+          arousal: number
+          confidence: number
+          created_at?: string
+          dominance: number
+          emotion: string
+          empathy_level: number
+          id?: string
+          response_text: string
+          user_id: string
+          user_input: string
+          valence: number
+        }
+        Update: {
+          arousal?: number
+          confidence?: number
+          created_at?: string
+          dominance?: number
+          emotion?: string
+          empathy_level?: number
+          id?: string
+          response_text?: string
+          user_id?: string
+          user_input?: string
+          valence?: number
+        }
+        Relationships: []
+      }
+      memory_layers: {
+        Row: {
+          activity_percentage: number
+          created_at: string
+          entry_count: number
+          id: string
+          layer_name: string
+          layer_type: string
+          retention_period: string
+          size_gb: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          activity_percentage?: number
+          created_at?: string
+          entry_count?: number
+          id?: string
+          layer_name: string
+          layer_type: string
+          retention_period: string
+          size_gb?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          activity_percentage?: number
+          created_at?: string
+          entry_count?: number
+          id?: string
+          layer_name?: string
+          layer_type?: string
+          retention_period?: string
+          size_gb?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      memory_snapshots: {
+        Row: {
+          created_at: string
+          id: string
+          size_mb: number
+          snapshot_id: string
+          snapshot_type: string
+          status: string
+          trigger_type: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          size_mb: number
+          snapshot_id: string
+          snapshot_type: string
+          status?: string
+          trigger_type: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          size_mb?: number
+          snapshot_id?: string
+          snapshot_type?: string
+          status?: string
+          trigger_type?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      neural_nodes: {
+        Row: {
+          activation: number
+          connections: string[]
+          created_at: string
+          id: string
+          node_id: string
+          node_type: string
+          updated_at: string
+          user_id: string
+          x_position: number
+          y_position: number
+        }
+        Insert: {
+          activation?: number
+          connections?: string[]
+          created_at?: string
+          id?: string
+          node_id: string
+          node_type: string
+          updated_at?: string
+          user_id: string
+          x_position: number
+          y_position: number
+        }
+        Update: {
+          activation?: number
+          connections?: string[]
+          created_at?: string
+          id?: string
+          node_id?: string
+          node_type?: string
+          updated_at?: string
+          user_id?: string
+          x_position?: number
+          y_position?: number
+        }
+        Relationships: []
+      }
+      neural_training_metrics: {
+        Row: {
+          accuracy: number
+          created_at: string
+          epoch: number
+          id: string
+          loss: number
+          training_time_seconds: number
+          user_id: string
+        }
+        Insert: {
+          accuracy: number
+          created_at?: string
+          epoch: number
+          id?: string
+          loss: number
+          training_time_seconds: number
+          user_id: string
+        }
+        Update: {
+          accuracy?: number
+          created_at?: string
+          epoch?: number
+          id?: string
+          loss?: number
+          training_time_seconds?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      system_status: {
+        Row: {
+          details: Json | null
+          id: string
+          status: string
+          subsystem_name: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          details?: Json | null
+          id?: string
+          status: string
+          subsystem_name: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          details?: Json | null
+          id?: string
+          status?: string
+          subsystem_name?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
